@@ -75,6 +75,8 @@
   width: 100%;
   max-width: 700px;
   min-height: 100px;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .quote-text {
@@ -84,6 +86,9 @@
   color: #fff;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  max-width: 100%;
 }
 
 .question h2 {
