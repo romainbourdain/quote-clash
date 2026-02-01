@@ -50,7 +50,11 @@
 }
 
 .quote-card {
-  background: linear-gradient(135deg, rgba(100, 108, 255, 0.1), rgba(255, 107, 107, 0.1));
+  background: linear-gradient(
+    135deg,
+    rgba(100, 108, 255, 0.1),
+    rgba(255, 107, 107, 0.1)
+  );
   border-radius: 1rem;
   padding: 1.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -65,7 +69,7 @@
   font-style: italic;
   line-height: 1.5;
   color: #fff;
-  margin: 0;
+  margin: auto;
 }
 
 .question h2 {
@@ -190,7 +194,8 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
@@ -199,7 +204,8 @@
 }
 
 @keyframes shake {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(0);
   }
   25% {
