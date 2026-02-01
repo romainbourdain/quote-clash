@@ -21,8 +21,8 @@ function App() {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null)
   const [showConfetti, setShowConfetti] = useState(false)
 
-  const successAudio = useRef(new Audio('/sounds/success.mp3'))
-  const errorAudio = useRef(new Audio('/sounds/error.mp3'))
+  const successAudio = useRef(new Audio(`${import.meta.env.BASE_URL}sounds/success.mp3`))
+  const errorAudio = useRef(new Audio(`${import.meta.env.BASE_URL}sounds/error.mp3`))
 
   useEffect(() => {
     const parseCSV = (text: string, category: 'rap' | 'author'): Quote[] => {
@@ -43,9 +43,11 @@ function App() {
       })
     }
 
+    const baseUrl = import.meta.env.BASE_URL
+
     Promise.all([
-      fetch('/data/rap-quotes.csv').then(r => r.text()),
-      fetch('/data/author-quotes.csv').then(r => r.text())
+      fetch(`${baseUrl}data/rap-quotes.csv`).then(r => r.text()),
+      fetch(`${baseUrl}data/author-quotes.csv`).then(r => r.text())
     ]).then(([rapText, authorText]) => {
       const rap = parseCSV(rapText, 'rap')
       const authors = parseCSV(authorText, 'author')
